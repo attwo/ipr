@@ -6,7 +6,7 @@ main_router = APIRouter(prefix="/ipr", tags=["IPR"])
 
 
 @main_router.post("/calc", response_model=IprCalcResponse)
-async def calc_ipr(ipr_in: IprCalcRequest):
+async def calculate(ipr_in: IprCalcRequest):
     """Эндпоинт расчёта IPR"""
     from src.calculations.vogel_ipr import calc_ipr
 
