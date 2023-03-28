@@ -1,6 +1,7 @@
-import src.routes as rts
 import uvicorn
 from fastapi import FastAPI
+
+import src.routes as rts
 
 app = FastAPI()
 

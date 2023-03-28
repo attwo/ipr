@@ -13,8 +13,7 @@ def generate_data_for_tests():
 
 
 def test_calc_model_success(api_client, generate_data_for_tests):
-    response = api_client.post("ipr/calc",
-                              json=generate_data_for_tests)
+    response = api_client.post("ipr/calc", json=generate_data_for_tests)
     assert response.status_code == 200
     result = response.json()
     assert result
