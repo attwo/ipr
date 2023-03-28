@@ -28,8 +28,7 @@ def calc_ipr(p_res: float, pi: float, wct: float, pb: float, points: int = 21):
     return result
 
 
-def calc_q_fluid(p_wf: float, pi: float, p_res: float, wct: float,
-                 pb: float) -> float:
+def calc_q_fluid(p_wf: float, pi: float, p_res: float, wct: float, pb: float) -> float:
     """
     Расчет дебита жидкости по обыкновенному Вогелю
 
@@ -66,10 +65,10 @@ def calc_q_fluid(p_wf: float, pi: float, p_res: float, wct: float,
         if b == 0:
             return abs(d / c)
 
-        return (-c + ((c * c - 4 * b * b * d)**0.5)) / (2 * b**2)
+        return (-c + ((c * c - 4 * b * b * d) ** 0.5)) / (2 * b**2)
 
     cg = 0.001 * qo_max
-    cd = fw * (cg / pi) + fo * 0.125 * pb * (-1 + (1 + 80 *
-                                                   ((0.001 * qo_max) /
-                                                    (qo_max - qb)))**0.5)
+    cd = fw * (cg / pi) + fo * 0.125 * pb * (
+        -1 + (1 + 80 * ((0.001 * qo_max) / (qo_max - qb))) ** 0.5
+    )
     return (p_wfg - p_wf) / (cd / cg) + qo_max

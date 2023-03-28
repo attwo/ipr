@@ -25,4 +25,3 @@ pip install -r requirements.txt
 python src/main.py
 ```
 5) Теперь приложение запущено и доступно по адресу `localhost:8002/docs`
-
